@@ -44,7 +44,7 @@ public class Dinner {
         System.out.println("Поиск продуктов в борще, соответствующих параметрам (цвет красный, оранжевый или фиолетовый), калорийность меньше 500" );
         System.out.println("Найденные продукты:" );
         for (Product p : soup.getSetsOfProducts()) {
-            if ((p.getColor().equals("красный") || p.getColor().equals("оранжевый") || p.getColor().equals("фиолетовый")) && p.getSummaryCalories() < 500) {
+            if (("красный".equals(p.getColor()) || "оранжевый".equals(p.getColor())) || "фиолетовый".equals(p.getColor()) && p.getSummaryCalories() < 500) {
                 System.out.println(p.getName());
             }
         }
