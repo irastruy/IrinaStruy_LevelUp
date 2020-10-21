@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="CalculatorTest">
+
+    <test name="DivideSubtract Tests">
+        <classes>
+            <class name="homework_5.tests.DivideCalculatorTest"/>
+            <class name="homework_5.tests.SubtractCalculatorTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -8,6 +8,104 @@
     <artifactId>IrinaStruy_LevelUp</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <!-- project settings -->
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <project.encoding>UTF-8</project.encoding>
+
+        <!-- dependencies -->
+        <testng.version>7.3.0</testng.version>
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <webdrivermanager.version>4.2.2</webdrivermanager.version>
+        <commons-io.version>2.8.0</commons-io.version>
+
+        <!-- plugins -->
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>calculator-test</id>
+            <properties>
+                <suite.name>${project.basedir}/src/main/homework_5/resources/unit/test/CalculateGeneralTestTest.xml</suite.name>
+                <browser.name>IE</browser.name>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <!-- Test NG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.levelup.qa.at.calculator</groupId>
+            <artifactId>calculator</artifactId>
+            <version>1.0</version>
+            <systemPath>src/homework_5/calculator-1.0.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
         <plugins>
@@ -21,6 +119,41 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>false</skipTests>
+                    <suiteXmlFiles>
+                        <suite.name>${project.basedir}/src/main/homework_5/resources/unit/test/CalculateGeneralTest.xml</suite.name>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${maven-failsafe-plugin.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suite.name}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemProperties>
+                        <browserName>${browser.name}</browserName>
+                    </systemProperties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
