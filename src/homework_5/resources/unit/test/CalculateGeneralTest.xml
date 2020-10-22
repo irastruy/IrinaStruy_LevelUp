@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="CalculatorTest">
+
+    <test name="Common tests">
+        <classes>
+            <class name="homework_5.tests.DivideCalculatorTest"/>
+            <class name="homework_5.tests.AddCalculatorTest"/>
+            <class name="homework_5.tests.SubtractCalculatorTest"/>
+            <class name="homework_5.tests.MultiplyCalculatorTest"/>
+            <class name="homework_5.tests.PowerCalculatorTest"/>
+            <class name="homework_5.tests.SqrtCalculatorTest"/>
+            <class name="homework_5.tests.TgCalculatorTest"/>
+            <class name="homework_5.tests.CtgCalculatorTest"/>
+            <class name="homework_5.tests.SinCalculatorTest"/>
+            <class name="homework_5.tests.CosCalculatorTest"/>
+            <class name="homework_5.tests.IsNegativeCalculatorTest"/>
+            <class name="homework_5.tests.IsPositiveCalculatorTest"/>
+        </classes>
+    </test>
+
+</suite>
