@@ -36,6 +36,13 @@
                 <browser.name>IE</browser.name>
             </properties>
         </profile>
+        <profile>
+            <id>mail-ru</id>
+            <properties>
+                <suite.name>${project.basedir}/src/main/homework_6/resources/test/MailRuGeneralTest.xml</suite.name>
+                <browser.name>IE</browser.name>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -91,13 +98,13 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>ru.levelup.qa.at.calculator</groupId>
             <artifactId>calculator</artifactId>
             <version>1.0</version>
             <systemPath>src/homework_5/calculator-1.0.jar</systemPath>
             <scope>system</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
