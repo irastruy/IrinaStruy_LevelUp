@@ -43,6 +43,13 @@
                 <browser.name>IE</browser.name>
             </properties>
         </profile>
+        <profile>
+            <id>mail-ru_pageobject</id>
+            <properties>
+                <suite.name>${project.basedir}/src/main/homework_7/src/test/resources/MailRuGeneralTest.xml</suite.name>
+                <browser.name>IE</browser.name>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
