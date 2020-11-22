@@ -26,6 +26,9 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+
+        <rest-assured.version>4.3.1</rest-assured.version>
+        <jackson-databind.version>2.11.3</jackson-databind.version>
     </properties>
 
     <profiles>
@@ -91,7 +94,7 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>ru.levelup.qa.at.calculator</groupId>
             <artifactId>calculator</artifactId>
             <version>1.0</version>
@@ -103,7 +106,35 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
+        </dependency>-->
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+            <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.3.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>java-hamcrest</artifactId>
+            <version>2.0.0.0</version>
+            <scope>test</scope>
+        </dependency>
+
+
 
     </dependencies>
 
